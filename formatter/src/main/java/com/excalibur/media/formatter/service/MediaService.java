@@ -3,10 +3,12 @@ package com.excalibur.media.formatter.service;
 import com.excalibur.media.formatter.model.FilenameType;
 import com.excalibur.media.formatter.provider.Formatter;
 import com.excalibur.media.formatter.FormatterFactory;
+import com.excalibur.media.support.annotation.ThreadSafe;
 import com.excalibur.media.support.exception.OperationFailedException;
 import java.io.IOException;
 import java.nio.file.*;
 
+@ThreadSafe
 public class MediaService {
 
     private final Formatter formatter;
@@ -20,11 +22,7 @@ public class MediaService {
     }
 
     public static MediaService forType(FilenameType type) {
-        return new MediaService(
-                type,
-                FormatterFactory.of(type),
-                false
-        );
+        return forTypeWithRecursive(type, false);
     }
 
     public static MediaService forTypeWithRecursive(FilenameType type, boolean recursive) {

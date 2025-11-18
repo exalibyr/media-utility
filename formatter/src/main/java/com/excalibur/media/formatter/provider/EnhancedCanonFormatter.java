@@ -1,5 +1,7 @@
 package com.excalibur.media.formatter.provider;
 
+import com.excalibur.media.formatter.model.FilenameType;
+
 import static com.excalibur.media.formatter.model.CharConstants.DASH;
 import static com.excalibur.media.formatter.model.CharConstants.UNDERSCORE;
 
@@ -24,5 +26,10 @@ public class EnhancedCanonFormatter extends DefaultCanonFormatter {
                 .append(UNDERSCORE)
                 .append(parts[4].substring(2))
                 .toString();
+    }
+
+    @Override
+    public FilenameType getType() {
+        return FilenameType.CANON;
     }
 }

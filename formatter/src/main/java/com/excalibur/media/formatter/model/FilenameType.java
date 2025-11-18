@@ -13,7 +13,11 @@ public enum FilenameType {
     ),
     OSMO_ACTION(
             Pattern.compile("^DJI_\\d{14}_\\d{4}_D$"),
-            ".mp4", ".lrf");
+            ".mp4", ".lrf"),
+    SAMSUNG_S22(
+            Pattern.compile("^\\d{8}_\\d{6}$"),
+            ".jpg", ".mp4", ".dng"
+    );
 
     FilenameType(Pattern pattern, String... extensions) {
         this(List.of(pattern), extensions);

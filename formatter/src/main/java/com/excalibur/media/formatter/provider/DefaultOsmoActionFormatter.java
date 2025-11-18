@@ -1,5 +1,7 @@
 package com.excalibur.media.formatter.provider;
 
+import com.excalibur.media.formatter.model.FilenameType;
+
 import static com.excalibur.media.formatter.model.CharConstants.UNDERSCORE;
 
 public class DefaultOsmoActionFormatter implements Formatter {
@@ -28,6 +30,11 @@ public class DefaultOsmoActionFormatter implements Formatter {
                 //.MP4
                 .append(filename, 25, filename.length())
                 .toString();
+    }
+
+    @Override
+    public FilenameType getType() {
+        return FilenameType.OSMO_ACTION;
     }
 
 }

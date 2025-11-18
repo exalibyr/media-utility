@@ -1,5 +1,7 @@
 package com.excalibur.media.formatter.provider;
 
+import com.excalibur.media.formatter.model.FilenameType;
+
 import static com.excalibur.media.formatter.model.CharConstants.DASH;
 import static com.excalibur.media.formatter.model.CharConstants.UNDERSCORE;
 
@@ -18,4 +20,8 @@ public class DefaultCanonFormatter implements Formatter {
                 .replaceAll(DASH, UNDERSCORE);
     }
 
+    @Override
+    public FilenameType getType() {
+        return FilenameType.CANON;
+    }
 }

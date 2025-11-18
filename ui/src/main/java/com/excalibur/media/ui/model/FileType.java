@@ -6,7 +6,8 @@ import java.util.List;
 
 public enum FileType {
     OSMO_ACTION("Osmo action", FilenameType.OSMO_ACTION),
-    CANON("Canon", FilenameType.CANON);
+    CANON("Canon", FilenameType.CANON),
+    SAMSUNG_S22("Samsung s22", FilenameType.SAMSUNG_S22);
 
     FileType(String label, FilenameType filenameType) {
         this.label = label;
